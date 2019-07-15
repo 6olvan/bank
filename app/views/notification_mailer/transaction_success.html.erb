@@ -1,0 +1,8 @@
+<h1>Hello you proceed transaction with type <%= @transaction.getType %> on account #<%= @transaction.account_id %> at <%= @transaction.created_at %> </h1>
+
+<p>
+   <ul>
+   	<li>Amount: <%= @transaction.amount.abs %></li>
+   	<li>Description: <%= @transaction.desc %></li>
+   </ul>
+</p>

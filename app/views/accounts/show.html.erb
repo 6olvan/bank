@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<div class="jumbotron">
+	<p>
+	  <strong>Balance:</strong>
+	  <span class="account-balance-js">
+	  	<%= @account.balance %>
+	  </span>
+
+	  <br>
+	  <div class="errors"></div>
+	  <%= form_with url: accounts_operation_path, remote: true do %>
+	  	<%= label_tag(:amount, 'Amount') %>
+	  	<%= number_field_tag(:amount) %>
+	  	<%= label_tag(:desc, 'Description') %>
+	  	<%= text_area_tag(:desc) %>
+	  	<br>
+	  	<br>
+	  	<%= button_tag(class: 'btn btn-danger', value: AccountService::TYPE_WRITE_OFF) do %>
+	  		<i class="glyphicon glyphicon-minus"></i> Write Off
+	  	<% end %>
+	  	<%= button_tag(class: 'btn btn-primary', value: AccountService::TYPE_TOP_UP) do %>
+	  		<i class="glyphicon glyphicon-plus"></i> Top Up
+	  	<% end %>
+	  <% end %>
+	</p>
+	<div class="transactions">
+		<%= render 'transactions' %>
+	</div>
+</div>

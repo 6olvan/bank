@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Accounts</h1>
+
+<table class="blueTable">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Balance</th>
+      <th>Created</th>
+      <th>Updated</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= link_to "Account ##{account.id}", account %></td>
+        <td><%= account.balance %> $</td>
+        <td><%= account.created_at %></td>
+        <td><%= account.updated_at %></td>
+        <td><%= link_to 'Show', account %></td>
+        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= button_to 'Create new Account', accounts_path, data: {confirm: 'Are you sure?'} %>

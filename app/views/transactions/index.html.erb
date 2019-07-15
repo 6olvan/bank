@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Transactions</h1>
+
+<table class="blueTable">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Account</th>
+      <th>Amount</th>
+      <th>Description</th>
+      <th>Created</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.getType %></td>
+        <td><%= "Account ##{transaction.account.id}" %></td>
+        <td><%= transaction.amount.abs %></td>
+        <td><%= transaction.desc %></td>
+        <td><%= transaction.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

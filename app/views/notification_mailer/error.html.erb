@@ -1,0 +1,10 @@
+<h1>Error coused in bank with message <%= @msg %></h1>
+
+<p>
+  Backtrace <br>
+  <ul>
+  	<% @bt.each do |trace| %>
+  	<li><%= trace %></li>
+  	<% end %>
+  </ul>
+</p>
