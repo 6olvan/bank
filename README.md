@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tested on
 
-Things you may want to cover:
+* Ruby 2.5, Rails 5.2, Mysql 5.7, 
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Setup
+ * bundle install
+ * configure mysql db
+ * rake db:create
+ * rake db:migrate
+ * rails s
